@@ -9,6 +9,19 @@
     <title>Compresores de Aire Reyson | Aire Puro Industrial - Type Group</title>
     <meta name="description"
         content="Compresores industriales Reyson de alta presión. Ideales para perforación y herramientas neumáticas pesadas. Soporte técnico y repuestos en Medellín." />
+    <link rel="canonical" href="https://typegroup.com.co/productos/compresores.html" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/img/logo reyson/Logo Reyson RGB-07.png">
+    <link rel="apple-touch-icon" href="../assets/img/logo reyson/Logo Reyson RGB-07.png">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://typegroup.com.co/productos/compresores.html">
+    <meta property="og:title" content="Compresores de Aire Reyson | Type Group">
+    <meta property="og:description"
+        content="Compresores industriales de alta presión para herramientas neumáticas pesadas.">
+    <meta property="og:image" content="https://typegroup.com.co/assets/img/productos/compresor-aire.png">
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link rel="stylesheet" href="../assets/css/main.css">
@@ -70,7 +83,7 @@
                             de aire avanzado y eficiencia térmica superior.
                         </p>
                         <div class="relative">
-                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuATNRqlJv6o85NU8xiNmg6m296IR1mdQqK8CVKtv8w4VFphjoupfjF_GKkG30b0Scb1i1d4FTv4jhjomH65VLMzrQ_WZEczqT9gigoL8WkdNXOUgHDeLuRuV9QXb_yeO__38wmYszLuR0-QhOZqWPD6ZH26qYf7biMrmzqtcBKKC9PbZDr4oUXOvfCbifyPZcFOK_TTyKPsZbrRossu6QyXqZ1u9jAEpQYQVaOH9rjKuWj3oIhLHgUFfieaUK4ewGxv0wBsXS45mu1b"
+                            <img src="../assets/img/productos/compresor-aire.png"
                                 alt="Compresor de Aire Industrial Reyson"
                                 class="relative w-full max-w-md mx-auto drop-shadow-2xl">
                         </div>
@@ -81,12 +94,13 @@
                             <h2
                                 class="text-2xl font-black text-brand-navy uppercase italic mb-8 border-b border-brand-beige pb-4">
                                 Consultar Precios</h2>
-                            <form class="space-y-4">
+                            <form id="compressorForm" class="space-y-4">
                                 <div class="grid grid-cols-2 gap-4">
-                                    <input type="text" placeholder="Nombre" class="form-input" required>
-                                    <input type="email" placeholder="Email" class="form-input" required>
+                                    <input type="text" name="nombre" placeholder="Nombre" class="form-input" required>
+                                    <input type="email" name="email" placeholder="Email" class="form-input" required>
                                 </div>
-                                <input type="text" placeholder="Proyecto / Obra" class="form-input" required>
+                                <input type="text" name="proyecto" placeholder="Proyecto / Obra" class="form-input"
+                                    required>
                                 <button type="submit" class="btn-primary w-full py-5 text-sm group">
                                     Solicitar Hoja Técnica
                                     <span

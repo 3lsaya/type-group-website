@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://typegroup.com.co/sitemap.xml

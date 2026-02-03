@@ -64,39 +64,66 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // === FORM HANDLING (PLACEHOLDER - INTEGRATE WITH YOUR n8n) ===
+    // === FORM HANDLING (INTEGRATED WITH n8n) ===
     const forms = document.querySelectorAll('form');
+    // REMPLAZAR ESTA URL CON TU WEBHOOK REAL DE n8n
+    const N8N_WEBHOOK_URL = 'https://n8n.3lsaya.com/webhook/typegroup-contact';
 
     forms.forEach(form => {
-        form.addEventListener('submit', function (e) {
+        form.addEventListener('submit', async function (e) {
             e.preventDefault();
+
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalBtnContent = submitBtn.innerHTML;
 
             // Get form data
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
 
-            console.log('Form submitted:', data);
+            // Añadir metadata útil
+            data.source_page = window.location.pathname;
+            data.timestamp = new Date().toISOString();
+            data.form_id = this.id || 'generic_form';
 
-            // TODO: Send to n8n webhook
-            // fetch('YOUR_N8N_WEBHOOK_URL', {
-            //     method: 'POST',
-            //     headers: { 'Content-Type': 'application/json' },
-            //     body: JSON.stringify(data)
-            // })
-            // .then(response => response.json())
-            // .then(data => {
-            //     alert('¡Mensaje enviado! Nos contactaremos pronto.');
-            //     form.reset();
-            // })
-            // .catch(error => {
-            //     console.error('Error:', error);
-            //     alert('Hubo un error. Por favor intente por WhatsApp.');
-            // });
+            console.log('Sending data to n8n:', data);
 
-            // Temporary: Show success message and redirect to WhatsApp
-            alert('¡Gracias por su interés! Lo redirigiremos a WhatsApp para atención inmediata.');
-            window.open('https://wa.me/573053270131?text=Hola,%20envié%20el%20formulario%20de%20contacto', '_blank');
-            form.reset();
+            try {
+                // Show loading state
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = `
+                    <span class="inline-flex items-center">
+                        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Enviando...
+                    </span>
+                `;
+
+                const response = await fetch(N8N_WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (!response.ok) throw new Error('Error en el servidor');
+
+                // Success
+                alert('¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.');
+                form.reset();
+            } catch (error) {
+                console.error('Error submitting form:', error);
+
+                // Fallback a WhatsApp si el webhook falla
+                if (confirm('Hubo un problema técnico al enviar el formulario. ¿Deseas enviarlo por WhatsApp para atención inmediata?')) {
+                    const text = `Hola, traté de enviar un formulario desde la web:\n\nNombre: ${data.nombre}\nInterés: ${data.producto || data.modelo || 'General'}\nMotivo: Error en Webhook`;
+                    window.open(`https://wa.me/573053270131?text=${encodeURIComponent(text)}`, '_blank');
+                }
+            } finally {
+                // Restore button state
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnContent;
+            }
         });
     });
 

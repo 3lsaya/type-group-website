@@ -9,6 +9,18 @@
     <title>Contacto - Type Group | Distribuidor Reyson en Medellín</title>
     <meta name="description"
         content="Contáctenos para cotizaciones de equipos Reyson. WhatsApp, email y formulario de contacto. Respuesta en menos de 1 hora." />
+    <link rel="canonical" href="https://typegroup.com.co/contacto.html" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/img/logo reyson/Logo Reyson RGB-07.png">
+    <link rel="apple-touch-icon" href="assets/img/logo reyson/Logo Reyson RGB-07.png">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://typegroup.com.co/contacto.html">
+    <meta property="og:title" content="Contacto - Type Group | Distribuidor Reyson">
+    <meta property="og:description" content="Solicite su cotización de equipos industriales Reyson.">
+    <meta property="og:image" content="https://typegroup.com.co/assets/img/productos/bombas-agua-hero.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/main.css">
@@ -117,41 +129,44 @@
                 </div>
 
                 <div class="form-card">
-                    <form class="space-y-5">
-                        <div class="grid md:grid-cols-2 gap-5">
+                    <form id="contactForm" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
                             <div>
                                 <label
-                                    class="block text-xs font-bold text-brand-gray/70 uppercase tracking-wider mb-2">Nombre
-                                    Completo *</label>
-                                <input type="text" class="form-input" required>
+                                    class="block text-xs font-bold text-brand-navy uppercase tracking-widest mb-2">Nombre
+                                    *</label>
+                                <input type="text" name="nombre" class="form-input" placeholder="Ej: Juan Pérez"
+                                    required>
                             </div>
                             <div>
                                 <label
-                                    class="block text-xs font-bold text-brand-gray/70 uppercase tracking-wider mb-2">Email
+                                    class="block text-xs font-bold text-brand-navy uppercase tracking-widest mb-2">Email
                                     *</label>
-                                <input type="email" class="form-input" required>
+                                <input type="email" name="email" class="form-input" placeholder="juan@empresa.com"
+                                    required>
                             </div>
                         </div>
 
-                        <div class="grid md:grid-cols-2 gap-5">
+                        <div class="grid md:grid-cols-2 gap-6">
                             <div>
                                 <label
-                                    class="block text-xs font-bold text-brand-gray/70 uppercase tracking-wider mb-2">Teléfono
+                                    class="block text-xs font-bold text-brand-navy uppercase tracking-widest mb-2">Teléfono
                                     *</label>
-                                <input type="tel" class="form-input" required>
+                                <input type="tel" name="telefono" class="form-input" placeholder="+57 300 000 0000"
+                                    required>
                             </div>
                             <div>
                                 <label
-                                    class="block text-xs font-bold text-brand-gray/70 uppercase tracking-wider mb-2">Empresa</label>
-                                <input type="text" class="form-input">
+                                    class="block text-xs font-bold text-brand-navy uppercase tracking-widest mb-2">Empresa</label>
+                                <input type="text" name="empresa" class="form-input" placeholder="Nombre de su empresa">
                             </div>
                         </div>
 
                         <div>
                             <label
-                                class="block text-xs font-bold text-brand-gray/70 uppercase tracking-wider mb-2">Producto
+                                class="block text-xs font-bold text-brand-navy uppercase tracking-widest mb-2">Producto
                                 de Interés</label>
-                            <select class="form-input">
+                            <select name="producto" class="form-input">
                                 <option disabled selected>Seleccione un producto</option>
                                 <option>Martillo Neumático ML33</option>
                                 <option>Bombas de Agua</option>
@@ -162,9 +177,9 @@
 
                         <div>
                             <label
-                                class="block text-xs font-bold text-brand-gray/70 uppercase tracking-wider mb-2">Mensaje
+                                class="block text-xs font-bold text-brand-navy uppercase tracking-widest mb-2">Mensaje
                                 *</label>
-                            <textarea class="form-input" rows="5" required
+                            <textarea name="mensaje" class="form-input" rows="5" required
                                 placeholder="Describa su consulta o proyecto..."></textarea>
                         </div>
 

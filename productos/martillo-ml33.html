@@ -11,6 +11,19 @@
         content="Martillo neumático Reyson ML33: 5.5kg, 2000 BPM, bajo consumo. Ideal para demolición y perforación. Disponibilidad inmediata en Medellín. ¡Cotice ahora!" />
     <meta name="keywords"
         content="martillo neumatico ml33, reyson medellin, martillo demolicion, precio martillo neumatico" />
+    <link rel="canonical" href="https://typegroup.com.co/productos/martillo-ml33.html" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/img/logo reyson/Logo Reyson RGB-07.png">
+    <link rel="apple-touch-icon" href="../assets/img/logo reyson/Logo Reyson RGB-07.png">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://typegroup.com.co/productos/martillo-ml33.html">
+    <meta property="og:title" content="Martillo Neumático ML33 Reyson | Type Group">
+    <meta property="og:description"
+        content="Martillo neumático de 5.5kg con 2000 BPM. Ideal para demolición profesional.">
+    <meta property="og:image" content="https://typegroup.com.co/assets/img/productos/martillo-ml33.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../assets/css/main.css">
@@ -109,8 +122,7 @@
                 <!-- Right: Product Image -->
                 <div class="relative fade-in" style="transition-delay: 0.2s;">
                     <div class="absolute inset-0 bg-brand-yellow/5 rounded-full blur-3xl"></div>
-                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfknLhZN43pG4FdX_duOzrSI-Gn82VzHEBuucPGb05BMud5Uj1xWcDh6Hxdi6yWaSu3nQ36iSK3gdsf9YgAkQkqKHQLDyO312_v9TnZyDiqY17hA0AYfuGI5I-FUGyk8MfiSCU8sajQ9kWBPxLskCzOa8HZhnzIncM9M_sPmr6s3iDHH4vaWCITiOR1343234K0TJCq7IDGWN3rk0eL8v94YdyEEHMFnyjltKLbjg6eY3-FIHSRG-FYgywNPqXmjLoxwg8xMk2gKn3"
-                        alt="Martillo Neumático ML33 Reyson"
+                    <img src="../assets/img/productos/martillo-ml33.png" alt="Martillo Neumático ML33 Reyson"
                         class="relative z-10 w-full max-w-lg mx-auto drop-shadow-2xl">
                 </div>
             </div>
@@ -257,14 +269,15 @@
                 </div>
 
                 <div class="form-card">
-                    <form class="space-y-4">
+                    <form id="hammerForm" class="space-y-4">
                         <div class="grid grid-cols-2 gap-4">
-                            <input type="text" placeholder="Nombre" class="form-input" required>
-                            <input type="email" placeholder="Email" class="form-input" required>
+                            <input type="text" name="nombre" placeholder="Nombre" class="form-input" required>
+                            <input type="email" name="email" placeholder="Email" class="form-input" required>
                         </div>
-                        <input type="tel" placeholder="Teléfono" class="form-input" required>
-                        <input type="text" placeholder="Empresa (Opcional)" class="form-input">
-                        <textarea placeholder="Mensaje o consulta específica" class="form-input" rows="3"></textarea>
+                        <input type="tel" name="telefono" placeholder="Teléfono" class="form-input" required>
+                        <input type="text" name="empresa" placeholder="Empresa (Opcional)" class="form-input">
+                        <textarea name="mensaje" placeholder="Mensaje o consulta específica" class="form-input"
+                            rows="3"></textarea>
                         <button type="submit" class="btn-primary w-full !py-4 group">
                             Enviar Consulta
                             <span

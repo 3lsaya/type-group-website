@@ -10,6 +10,19 @@
     <meta name="description"
         content="Cables de acero 6x19 con alma alquitranada. Diámetros 1/2, 5/8, 3/4 y 1 pulgada. Para minería, construcción e izaje. Disponibilidad inmediata en Medellín." />
     <meta name="keywords" content="guayas acero, cables acero 6x19, guayas mineria, cables izaje medellin" />
+    <link rel="canonical" href="https://typegroup.com.co/productos/guayas-acero.html" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/img/logo reyson/Logo Reyson RGB-07.png">
+    <link rel="apple-touch-icon" href="../assets/img/logo reyson/Logo Reyson RGB-07.png">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://typegroup.com.co/productos/guayas-acero.html">
+    <meta property="og:title" content="Guayas de Acero 6x19 Certificadas | Type Group">
+    <meta property="og:description"
+        content="Cables de acero de alta resistencia para minería y construcción. Certificación API/ISO.">
+    <meta property="og:image" content="https://typegroup.com.co/assets/img/productos/guayas-acero.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../assets/css/main.css">
@@ -108,8 +121,8 @@
 
                 <div class="relative fade-in" style="transition-delay: 0.2s;">
                     <div class="absolute inset-0 bg-brand-yellow/5 rounded-full blur-3xl"></div>
-                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy9s7-n2-L_o0Goae7JbQd0B1IJIG_umKT36A4XcQJww34abt6sIF-meRcezCPepj5up8l5Ml1xNl0TkZ3Jnz31lMAW3MMh_vwt67DPN7Nash_J0gzVsB4ZwUfnIKBJ-BZ-i4bM24Hz_lutOGMN8JiGknaRu2CRYFVp4xifIz1VkVl2ZUa_9NAGQrCCxyKVl3682VNR97Ks4LMDbu7b0GBH6Rf7v-RP1QdFalTufQhKbE34B9TTo0vFepq6oCk0M3jcO6bumchJny1"
-                        alt="Guayas de Acero 6x19" class="relative z-10 w-full max-w-lg mx-auto drop-shadow-2xl">
+                    <img src="../assets/img/productos/guayas-acero.png" alt="Guayas de Acero 6x19"
+                        class="relative z-10 w-full max-w-lg mx-auto drop-shadow-2xl">
                 </div>
             </div>
         </div>
@@ -304,23 +317,24 @@
             </div>
 
             <div class="form-card">
-                <form class="space-y-4">
+                <form id="ropeForm" class="space-y-4">
                     <div class="grid grid-cols-2 gap-4">
-                        <input type="text" placeholder="Nombre" class="form-input" required>
-                        <input type="email" placeholder="Email" class="form-input" required>
+                        <input type="text" name="nombre" placeholder="Nombre" class="form-input" required>
+                        <input type="email" name="email" placeholder="Email" class="form-input" required>
                     </div>
-                    <input type="tel" placeholder="Teléfono" class="form-input" required>
+                    <input type="tel" name="telefono" placeholder="Teléfono" class="form-input" required>
                     <div class="grid grid-cols-2 gap-4">
-                        <select class="form-input" required>
+                        <select name="diametro" class="form-input" required>
                             <option disabled selected>Diámetro</option>
                             <option>1/2"</option>
                             <option>5/8"</option>
                             <option>3/4"</option>
                             <option>1"</option>
                         </select>
-                        <input type="text" placeholder="Cantidad (metros)" class="form-input" required>
+                        <input type="text" name="cantidad" placeholder="Cantidad (metros)" class="form-input" required>
                     </div>
-                    <textarea placeholder="Aplicación o uso específico" class="form-input" rows="3"></textarea>
+                    <textarea name="mensaje" placeholder="Aplicación o uso específico" class="form-input"
+                        rows="3"></textarea>
                     <button type="submit" class="btn-primary w-full !py-4">
                         Enviar Solicitud
                     </button>
