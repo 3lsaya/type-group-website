@@ -1,0 +1,20 @@
+# IDE
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Temporary files
+*.tmp
+*.log
+PROGRESO.md
+CAMBIOS-COMPLETADOS.md
+AUDITORIA-LOGOS.md
+IMPLEMENTACION-FINAL.md
+
+# Build
+dist/
+build/
+node_modules/
